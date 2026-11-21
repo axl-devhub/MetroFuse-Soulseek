@@ -1,0 +1,9 @@
+# Soulseek native plugin for MetroFuse
+
+The plugin implements `dev.metrofuse.api.NativePlugin`, `LoginPlugin` and `HomePlugin` from MetroFuse plugin API 1.1.0.
+
+SoulseekClient, SoulseekCodec and SoulseekMatching are a download-only Soulseek client written in Kotlin for this plugin, first developed for a Metrolist fork (axl-devhub/Metrolist-Soulseek, GPL-3.0). It uses plain JVM sockets and zlib; there is no Python, JNI or other native code. Message layouts follow the Nicotine+ protocol notes and the aioslsk implementation; no code from either project is included.
+
+The client never listens for connections. Peers that cannot reach it ask the Soulseek server to relay a connect request, and the client connects out with the pierce-firewall ticket, which works behind NAT. Peer data is untrusted: reads are bounds-checked, message and string sizes are capped, and saved file names drop path components.
+
+Licensed under GPL-3.0, included as LICENSE.

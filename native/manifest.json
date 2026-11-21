@@ -1,0 +1,20 @@
+{
+  "id": "soulseek",
+  "name": "Soulseek",
+  "version": "1.0.0",
+  "author": "axl-devhub",
+  "api": "1.1.0",
+  "runtime": "kotlin",
+  "platforms": ["desktop", "android"],
+  "entryClass": "io.github.axldevhub.soulseek.SoulseekPlugin",
+  "composeAbi": "kotlin-2.4.21_compose-1.13.0-beta02_api-1.1.0",
+  "capabilities": ["audio", "search", "settings", "login", "home"],
+  "description": "Play songs in lossless or 320 kbps from the Soulseek network. Upcoming songs download in the background and play offline once downloaded.",
+  "settings": [
+    {"key": "username", "title": "Soulseek username (macOS and Linux sign-in; Windows and Android use the account screen)", "type": "STRING", "default": ""},
+    {"key": "password", "title": "Soulseek password: checked, moved to the system keychain, then cleared from this field", "type": "STRING", "default": ""},
+    {"key": "quality", "title": "Preferred quality", "type": "ENUM", "default": "Lossless first", "options": ["Lossless first", "Hi-res first", "320 kbps first"]},
+    {"key": "prefetch", "title": "Download the current and next two songs from Soulseek in the background", "type": "BOOLEAN", "default": true},
+    {"key": "waitForDownload", "title": "Wait up to 25 seconds for Soulseek before playing another source", "type": "BOOLEAN", "default": false}
+  ]
+}
